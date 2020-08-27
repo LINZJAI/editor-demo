@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="section-title">简易编辑器</div>
+    <div class="section-title" style="margin-top: 10px">简易编辑器</div>
     <div class="tool-con">
       <el-tooltip
         :content="

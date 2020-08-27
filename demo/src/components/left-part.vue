@@ -2,12 +2,20 @@
   <div class="left-part">
     <div class="nav">例子</div>
     <div class="sub-nav">简易编辑器</div>
+    <div class="nav">主流编辑器</div>
+    <div class="sub-nav">ueditor</div>
+    <div class="sub-nav">tinymce</div>
+    <div class="sub-nav">ckeditor</div>
+    <div class="sub-nav">wangeditor</div>
+    <div class="sub-nav">quill(bubble主题)</div>
+    <div class="sub-nav">quill(snow主题)</div>
   </div>
 </template>
 <style lang="scss" scoped>
 .left-part {
-  width: 250px;
-  padding-left: 60px;
+  width: 300px;
+  padding: 20px 0;
+  padding-left: 80px;
   box-sizing: border-box;
 }
 .nav {

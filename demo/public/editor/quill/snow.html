@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 引入css文件 -->
+    <link href="./quill.snow.css" rel="stylesheet" />
+
+    <link href="./quill.core.css" rel="stylesheet" />
+    <link href="./quill.bubble.css" rel="stylesheet" />
+    <style>
+      #editor {
+        height: 450px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 自定义编辑器工具栏 -->
+    <div id="toolbar">
+      <span class="ql-formats">
+        <select class="ql-font"></select>
+        <select class="ql-size"></select>
+      </span>
+      <span class="ql-formats">
+        <button class="ql-bold"></button>
+        <button class="ql-italic"></button>
+        <button class="ql-underline"></button>
+        <button class="ql-strike"></button>
+      </span>
+      <span class="ql-formats">
+        <select class="ql-color"></select>
+        <select class="ql-background"></select>
+      </span>
+      <span class="ql-formats">
+        <button class="ql-script" value="sub"></button>
+        <button class="ql-script" value="super"></button>
+      </span>
+      <span class="ql-formats">
+        <button class="ql-header" value="1"></button>
+        <button class="ql-header" value="2"></button>
+        <button class="ql-blockquote"></button>
+        <button class="ql-code-block"></button>
+      </span>
+      <span class="ql-formats">
+        <button class="ql-list" value="ordered"></button>
+        <button class="ql-list" value="bullet"></button>
+        <button class="ql-indent" value="-1"></button>
+        <button class="ql-indent" value="+1"></button>
+      </span>
+      <span class="ql-formats">
+        <button class="ql-direction" value="rtl"></button>
+        <select class="ql-align"></select>
+      </span>
+      <span class="ql-formats">
+        <button class="ql-link"></button>
+        <button class="ql-image"></button>
+        <button class="ql-video"></button>
+        <button class="ql-formula"></button>
+      </span>
+      <span class="ql-formats">
+        <button class="ql-clean"></button>
+      </span>
+    </div>
+    <!-- 创建编辑容器 -->
+    <div id="editor">
+      <p>Hello World!</p>
+      <p>Hello World!</p>
+      <p>Hello World!</p>
+      <p>Hello World!</p>
+      <p>Hello World!</p>
+      <p>Hello World!</p>
+      <p>Hello World!</p>
+    </div>
+    <!-- 引入js文件 -->
+    <!-- <script src="./quill/quill.min.js"></script> -->
+    <!-- <script src="./quill/quill.core.js"></script> -->
+    <script src="./quill.js"></script>
+    <!-- 初始化编辑器，snow主题 -->
+    <script>
+      // var Parchment = Quill.import("parchment");
+      // let config = {
+      //   scope: Parchment.Scope.INLINE,
+      //   whitelist: ["monospace"],
+      // };
+
+      // let FontClass = new Parchment.Attributor.Class("font", "ql-lzj", config);
+      // Quill.register(
+      //   {
+      //     "formats/font": FontClass,
+      //   },
+      //   true
+      // );
+      var editor = new Quill("#editor", {
+        theme: "snow",
+        modules: { toolbar: "#toolbar" },
+        // modules: {
+        //   toolbar: [
+        //     ["bold", "italic", "underline", "strike"], // toggled buttons
+        //     ["blockquote", "code-block"],
+        //   ],
+        // },
+      });
+
+      editor.on("text-change", function(delta, oldDelta, source) {
+        console.log("delata", delta, oldDelta, source);
+      });
+    </script>
+  </body>
+</html>
