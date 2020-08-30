@@ -1,14 +1,22 @@
 <template>
   <div class="left-part">
-    <div class="nav">例子</div>
-    <div class="sub-nav">简易编辑器</div>
-    <div class="nav">主流编辑器</div>
-    <div class="sub-nav">ueditor</div>
-    <div class="sub-nav">tinymce</div>
-    <div class="sub-nav">ckeditor</div>
-    <div class="sub-nav">wangeditor</div>
-    <div class="sub-nav">quill(bubble主题)</div>
-    <div class="sub-nav">quill(snow主题)</div>
+    <template v-for="(item, index) in list">
+      <div class="nav" v-if="item.type === 'nav'" :key="item.type + index">
+        {{ item.text }}
+      </div>
+      <div
+        class="sub-nav"
+        v-else-if="item.type === 'sub-nav'"
+        :key="item.type + index"
+      >
+        <a
+          :href="item.target"
+          @click="selectedSectionId = item.target"
+          :class="{ active: selectedSectionId === item.target }"
+          >{{ item.text }}</a
+        >
+      </div>
+    </template>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -17,6 +25,7 @@
   padding: 20px 0;
   padding-left: 80px;
   box-sizing: border-box;
+  overflow: auto;
 }
 .nav {
   font-size: 16px;
@@ -43,8 +52,14 @@
   text-overflow: ellipsis;
   font-weight: 400;
   cursor: pointer;
-  &:hover {
-    color: #409eff;
+
+  a {
+    text-decoration: none;
+    color: #444;
+    &.active,
+    &:hover {
+      color: #409eff;
+    }
   }
 }
 </style>
@@ -52,7 +67,92 @@
 export default {
   props: {},
   data() {
-    return {};
+    return {
+      selectedSectionId: "",
+      list: [
+        {
+          type: "nav",
+          text: "例子",
+        },
+        {
+          type: "sub-nav",
+          text: "简易编辑器",
+          target: "#section-1",
+        },
+        {
+          type: "nav",
+          text: "主流编辑器",
+        },
+        {
+          type: "sub-nav",
+          text: "ueditor",
+          target: "#section-2",
+        },
+        {
+          type: "sub-nav",
+          text: "tinymce",
+          target: "#section-3",
+        },
+        {
+          type: "sub-nav",
+          text: "ckeditor",
+          target: "#section-4",
+        },
+        {
+          type: "sub-nav",
+          text: "wangeditor",
+          target: "#section-5",
+        },
+        {
+          type: "sub-nav",
+          text: "quill(bubble主题)",
+          target: "#section-6",
+        },
+        {
+          type: "sub-nav",
+          text: "quill(snow主题)",
+          target: "#section-7",
+        },
+        {
+          type: "nav",
+          text: "坑在哪里",
+        },
+        {
+          type: "sub-nav",
+          text: "dom",
+          target: "#section-8",
+        },
+        {
+          type: "sub-nav",
+          text: "Range/Selection",
+          target: "#section-9",
+        },
+        {
+          type: "sub-nav",
+          text: "撤销重做",
+          target: "#section-10",
+        },
+        {
+          type: "nav",
+          text: "quill",
+        },
+        {
+          type: "sub-nav",
+          text: "自定义模块",
+          target: "#section-11",
+        },
+        {
+          type: "sub-nav",
+          text: "自定义Blots",
+          target: "#section-12",
+        },
+        {
+          type: "sub-nav",
+          text: "自定义功能",
+          target: "#section-13",
+        },
+      ],
+    };
   },
   methods: {},
   components: {},

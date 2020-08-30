@@ -1,17 +1,17 @@
 <template>
   <div>
-    <div class="section-title" style="margin-top: 10px">简易编辑器</div>
+    <div class="section-title" style="margin-top: 0px">简易编辑器</div>
     <div class="tool-con">
       <el-tooltip
         :content="
-          `document.querySelector('.editor-box').contentEditable = ${
+          `document.querySelector('#editor').contentEditable = ${
             contenteditable ? 'false' : 'true'
           }`
         "
         placement="top"
         effect="light"
       >
-        <el-button type="mini" @click="contenteditable = !contenteditable"
+        <el-button type="mini" @click="toggle"
           >{{ contenteditable ? "关闭" : "开启" }}编辑模式</el-button
         >
       </el-tooltip>
@@ -38,24 +38,20 @@
       </el-tooltip>
     </div>
     <div class="editor-con">
-      <div
-        class="editor-box"
-        :contenteditable="contenteditable"
-        @keypress="onChange"
-        @keydown="onChange"
-        ref="editor"
-      >
-        <div v-html="content"></div>
+      <div ref="editor" class="editor-box">
+        <div id="editor" :contenteditable="contenteditable" @keydown="onChange">
+          <div v-html="content"></div>
+        </div>
       </div>
       <div class="code-box">
-        <div v-highlight>
+        <div v-highlight="'xml'">
           <pre><code v-text="code"></code></pre>
         </div>
       </div>
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .tool-con {
   margin-bottom: 10px;
 }
@@ -65,6 +61,12 @@
 }
 .editor-box {
   margin-right: 10px;
+  padding: 0 !important;
+}
+#editor {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
 }
 .editor-box,
 .code-box {
@@ -73,13 +75,16 @@
   height: 265px;
   border: 1px solid #dcdfe6;
   overflow: auto;
-  padding: 20px;
   font-size: 14px;
   ::v-deep {
     a {
       color: blue;
     }
   }
+}
+
+.code-box {
+  background: #1d1f21;
 }
 </style>
 <script>
@@ -91,28 +96,35 @@ export default {
       content: `
       <p>写字楼里写字间，</p>
       <p>写字间里程序员；</p>
-      <p>程序人员写程序，</p>
-      <p>又拿程序换酒钱。</p>
       `,
       code: "",
     };
   },
   methods: {
+    toggle() {
+      this.contenteditable = !this.contenteditable;
+      this.onChange();
+    },
     setBold() {
       document.execCommand("bold", false, true);
+      this.onChange();
     },
     setLink() {
       document.execCommand("createlink", false, "https://www.baidu.com/");
+      this.onChange();
     },
     setH1() {
       document.execCommand("FormatBlock", false, "<h1>");
+      this.onChange();
     },
     onChange() {
-      this.code = this.$refs.editor.innerHTML;
+      setTimeout(() => {
+        this.code = this.HTMLFormat(this.$refs.editor.innerHTML);
+      }, 100);
     },
   },
   mounted() {
-    this.code = this.$refs.editor.innerHTML;
+    this.onChange();
   },
   components: {},
 };

@@ -10,9 +10,12 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 	<link type="text/css" href="sample/css/sample.css" rel="stylesheet" media="screen" />
 	<title>CKEditor 5 – classic editor build sample</title>
 	<style>
-		.ck-editor__editable {
+		/* .ck-editor__editable {
 			height: 450px;
-		}
+		} */
+		.ck-content {
+          height: 450px;
+        }
 	</style>
 </head>
 <body>
@@ -51,6 +54,7 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 <script>
 	ClassicEditor
 		.create( document.querySelector( '#editor' ), {
+			height: 450
 			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
 		} )
 		.then( editor => {
