@@ -81,6 +81,25 @@ export default {
         },
         {
           type: "nav",
+          text: "坑在哪里",
+        },
+        {
+          type: "sub-nav",
+          text: "dom",
+          target: "#section-8",
+        },
+        {
+          type: "sub-nav",
+          text: "Range/Selection",
+          target: "#section-9",
+        },
+        {
+          type: "sub-nav",
+          text: "撤销重做",
+          target: "#section-10",
+        },
+        {
+          type: "nav",
           text: "主流编辑器",
         },
         {
@@ -113,25 +132,7 @@ export default {
           text: "quill(snow主题)",
           target: "#section-7",
         },
-        {
-          type: "nav",
-          text: "坑在哪里",
-        },
-        {
-          type: "sub-nav",
-          text: "dom",
-          target: "#section-8",
-        },
-        {
-          type: "sub-nav",
-          text: "Range/Selection",
-          target: "#section-9",
-        },
-        {
-          type: "sub-nav",
-          text: "撤销重做",
-          target: "#section-10",
-        },
+
         {
           type: "nav",
           text: "quill",

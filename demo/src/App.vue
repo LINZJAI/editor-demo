@@ -3,6 +3,10 @@
     <LeftPart></LeftPart>
     <div class="right-part">
       <EasyEditor id="section-1"></EasyEditor>
+      <DomBug id="section-8"></DomBug>
+      <DomBug2></DomBug2>
+      <SelectionBug id="section-9"></SelectionBug>
+      <Undo id="section-10"></Undo>
       <EditorIframe
         id="section-2"
         title="ueditor"
@@ -39,10 +43,7 @@
         url="/editor/quill/snow.html"
         :height="520"
       ></EditorIframe>
-      <DomBug id="section-8"></DomBug>
-      <DomBug2></DomBug2>
-      <SelectionBug id="section-9"></SelectionBug>
-      <Undo id="section-10"></Undo>
+
       <QuilllModule id="section-11"></QuilllModule>
       <QuilllBlots id="section-12"></QuilllBlots>
       <QuilllDelta id="section-14"></QuilllDelta>
@@ -89,7 +90,7 @@ export default {
   align-items: stretch;
   box-sizing: border-box;
   .right-part {
-    padding-right: 100px;
+    padding-right: 50px;
     padding-left: 50px;
     width: 0;
     flex: 1;
