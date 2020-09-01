@@ -45,7 +45,9 @@
       <Undo id="section-10"></Undo>
       <QuilllModule id="section-11"></QuilllModule>
       <QuilllBlots id="section-12"></QuilllBlots>
+      <QuilllDelta id="section-14"></QuilllDelta>
       <QuilllLineHeight id="section-13"></QuilllLineHeight>
+      <div style="height: 100px"></div>
     </div>
   </div>
 </template>
@@ -61,6 +63,7 @@ import Undo from "./components/undo";
 import QuilllModule from "./components/quilll-module";
 import QuilllBlots from "./components/quilll-blots";
 import QuilllLineHeight from "./components/quilll-lineHeight";
+import QuilllDelta from "./components/quilll-delta";
 export default {
   name: "App",
   components: {
@@ -74,6 +77,7 @@ export default {
     QuilllModule,
     QuilllBlots,
     QuilllLineHeight,
+    QuilllDelta,
   },
 };
 </script>

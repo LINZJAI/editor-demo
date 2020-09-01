@@ -103,7 +103,7 @@
       });
 
       editor.on("text-change", function(delta, oldDelta, source) {
-        console.log("delata", delta, oldDelta, source);
+        console.log(JSON.stringify(delta.ops));
       });
     </script>
   </body>

@@ -148,6 +148,11 @@ export default {
         },
         {
           type: "sub-nav",
+          text: "Delta",
+          target: "#section-14",
+        },
+        {
+          type: "sub-nav",
           text: "自定义功能",
           target: "#section-13",
         },
