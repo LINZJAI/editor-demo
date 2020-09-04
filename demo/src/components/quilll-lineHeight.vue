@@ -63,7 +63,7 @@
 .code-box {
   flex: 1;
   width: 0px;
-  height: 300px;
+  height: 400px;
   /* border: 1px solid #dcdfe6; */
   overflow: auto;
   font-size: 14px;
@@ -195,6 +195,7 @@ export default {
       `,
       lineHeightList: ["0-5", "0-75", "1", "1-5", "1-75", "2"],
       html: `
+       <div id="editor"></div>
        <div id="toolbar">
           <select class="ql-lineHeight">
             <option
