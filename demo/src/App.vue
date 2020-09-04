@@ -10,37 +10,37 @@
       <EditorIframe
         id="section-2"
         title="ueditor"
-        url="/editor/ueditor/"
+        url="./editor/ueditor/index.html"
         :height="500"
       ></EditorIframe>
       <EditorIframe
         id="section-3"
         title="tinymce"
-        url="/editor/tinymce/"
+        url="./editor/tinymce/index.html"
         :height="520"
       ></EditorIframe>
       <EditorIframe
         id="section-4"
         title="ckeditor"
-        url="/editor/ckeditor/"
+        url="./editor/ckeditor/index.html"
         :height="520"
       ></EditorIframe>
       <EditorIframe
         id="section-5"
         title="wangeditor"
-        url="/editor/wangeditor/"
+        url="./editor/wangeditor/index.html"
         :height="350"
       ></EditorIframe>
       <EditorIframe
         id="section-6"
         title="quill(bubble主题)"
-        url="/editor/quill/bubble.html"
+        url="./editor/quill/bubble.html"
         :height="350"
       ></EditorIframe>
       <EditorIframe
         id="section-7"
         title="quill(snow主题)"
-        url="/editor/quill/snow.html"
+        url="./editor/quill/snow.html"
         :height="520"
       ></EditorIframe>
 
